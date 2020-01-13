@@ -15,8 +15,7 @@ class CreateIcurrencyCurrencyTranslationsTable extends Migration
         Schema::create('icurrency__currency_translations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            // Your translatable fields
-
+            $table->text('name');
             $table->integer('currency_id')->unsigned();
             $table->string('locale')->index();
             $table->unique(['currency_id', 'locale']);

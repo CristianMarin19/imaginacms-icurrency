@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class CurrencyTranslation extends Model
 {
     public $timestamps = false;
-    protected $fillable = [];
+
+    protected $fillable = [
+      'name'
+    ];
+
     protected $table = 'icurrency__currency_translations';
 }

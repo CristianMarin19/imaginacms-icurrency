@@ -15,7 +15,14 @@ class CreateIcurrencyCurrenciesTable extends Migration
         Schema::create('icurrency__currencies', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            // Your fields
+            $table->string('code');
+            $table->string('symbol_left')->nullable();
+            $table->string('symbol_right')->nullable();
+            $table->char('decimal_place', 1)->nullable();
+            $table->double('value', 15, 15);
+            $table->tinyInteger('status')->default(0)->unsigned();
+            $table->boolean('default_currency')->default(false);
+            $table->text('options')->default('')->nullable();
             $table->timestamps();
         });
     }
