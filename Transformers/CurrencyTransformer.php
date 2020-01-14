@@ -22,6 +22,7 @@ class CurrencyTransformer extends Resource
       'value' => $this->when($this->value, $this->value),
       'status' => $this->when($this->status, $this->status),
       'options' => $this->when($this->options, $this->options),
+      'createdAt ' => $this->when($this->created_at, $this->created_at),
       'updatedAt ' => $this->when($this->updated_at, $this->updated_at),
     ];
     return $data;
