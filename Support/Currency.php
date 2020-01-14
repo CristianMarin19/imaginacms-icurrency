@@ -44,7 +44,7 @@ class Currency
    * @param $from
    * @return float
    */
-  public function convertFromTo($value, $to, $from = 'AUD')
+  public function convertFromTo($value, $to, $from = 'USD')
   {
     /* Convert value from currency "From" */
     $fromCurrency = CurrencyEntity::currencyCode($from);
@@ -64,7 +64,7 @@ class Currency
    */
   public function getLocaleCurency()
   {
-    return $this->localeCurency->code;
+    return $this->localeCurency;
   }
 
   /**
