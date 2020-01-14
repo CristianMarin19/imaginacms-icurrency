@@ -12,7 +12,7 @@ class Currency extends Model
     protected $table = 'icurrency__currencies';
 
     public $translatedAttributes = [
-        'name'
+        'name',
     ];
     protected $fillable = [
         'code',
@@ -22,7 +22,7 @@ class Currency extends Model
         'value',
         'status',
         'default_currency',
-        'options'
+        'options',
     ];
 
     protected $fakeColumns = ['options'];
@@ -35,6 +35,11 @@ class Currency extends Model
     public function scopeDefaultCurrency($query)
     {
         return $query->where('default_currency', 1)->first();
+    }
+
+    public function scopeNoDefaultCurrency($query)
+    {
+        return $query->where('default_currency', 0)->get();
     }
 
     public function scopeCurrencyCode($query, $currency)
