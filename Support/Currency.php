@@ -83,4 +83,8 @@ class Currency
     return floatval(number_format($result, 2, '.', ''));
   }
 
+  public function getSupportedCurrencies (){
+    return CurrencyEntity::all();
+  }
+
 }
