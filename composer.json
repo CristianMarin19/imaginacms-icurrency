@@ -1,6 +1,6 @@
 {
     "name": "imagina/icurrency",
-    "description": "",
+    "description": "This module manages currencies and conversions",
     "type": "asgard-module",
     "license": "MIT",
     "require": {
@@ -22,8 +22,8 @@
     "prefer-stable": true,
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Imagina Soluciones Web",
+            "email": "soporte@imaginacolombia.com"
         }
     ],
     "extra": {
@@ -32,7 +32,7 @@
                 "Modules\\Icurrency\\Providers\\IcurrencyServiceProvider"
             ],
             "aliases": {
-                
+
             }
         }
     },
