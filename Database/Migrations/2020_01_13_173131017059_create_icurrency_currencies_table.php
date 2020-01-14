@@ -19,7 +19,7 @@ class CreateIcurrencyCurrenciesTable extends Migration
             $table->string('symbol_left')->nullable();
             $table->string('symbol_right')->nullable();
             $table->char('decimal_place', 1)->nullable();
-            $table->double('value', 15, 15);
+            $table->double('value', 15, 10);
             $table->tinyInteger('status')->default(0)->unsigned();
             $table->boolean('default_currency')->default(false);
             $table->text('options')->default('')->nullable();
