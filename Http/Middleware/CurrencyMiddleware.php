@@ -18,10 +18,16 @@ class CurrencyMiddleware
     public function handle(Request $request, Closure $next)
     {
 
-        $filter = json_decode($request->filter);
+        $setting = json_decode($request->setting);
+        if (isset($setting->currency)){
+            Currency::setLocaleCurency($setting->currency);
+            return $next($request);
+        }
 
+        $filter = json_decode($request->filter);
         if (isset($filter->currency)){
             Currency::setLocaleCurency($filter->currency);
+            return $next($request);
         }
 
         return $next($request);
