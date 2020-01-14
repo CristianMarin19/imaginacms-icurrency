@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Icurrency\Facades;
+namespace Modules\Icurrency\Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class CurrencyFacade extends Facade
+class Currency extends Facade
 {
     protected static function getFacadeAccessor()
     {

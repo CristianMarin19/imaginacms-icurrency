@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Routing\Router;
-use Modules\Iquote\Facades\Currency;
 
 $router->group(['prefix' => 'currencies'], function (Router $router) {
 

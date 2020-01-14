@@ -30,4 +30,16 @@ class Currency extends Model
     protected $casts = [
         'options' => 'array'
     ];
+
+    /* Query Scopes */
+    public function scopeDefaultCurrency($query)
+    {
+        return $query->where('default_currency', 1)->first();
+    }
+
+    public function scopeCurrencyCode($query, $currency)
+    {
+      return $query->where('code', strtoupper($currency))->first();
+    }
+
 }

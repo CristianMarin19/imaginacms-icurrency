@@ -17,8 +17,8 @@ class Currency
    */
   public function __construct()
   {
-    /* Init locale Currency with default value 'AUD'*/
-    $this->localeCurency = CurrencyEntity::where('code', 'AUD')->first();
+    /* Init default Currency */
+    $this->localeCurency = CurrencyEntity::defaultCurrency();
   }
 
   /**
@@ -47,11 +47,11 @@ class Currency
   public function convertFromTo($value, $to, $from = 'AUD')
   {
     /* Convert value from currency "From" */
-    $fromCurrency = CurrencyEntity::where('code', $from)->first();
+    $fromCurrency = CurrencyEntity::currencyCode($from);
     $fromCurrencyValue = intval($value) * ($fromCurrency->value ?? 1);
 
     /* Convert value from currency "to" */
-    $toCurrency = CurrencyEntity::where('code', $to)->first();
+    $toCurrency = CurrencyEntity::currencyCode($to);
     $toCurrencyValue = $this->trasformerResult($fromCurrencyValue) / ($toCurrency->value ?? 1);
 
     /* Return value in the follow formant 'xxxx.xx' */
@@ -70,16 +70,16 @@ class Currency
   /**
    * @param $localeCurency
    */
-  public function setLocaleCurency($localeCurency)
+  public function setLocaleCurency($newCurrency)
   {
-    $this->localeCurency = CurrencyEntity::where('code', strtoupper($localeCurency))->first();
+    $this->localeCurency = CurrencyEntity::currencyCode($newCurrency);
   }
 
   /**
    * @param $result
    * @return float
    */
-  private function trasformerResult ($result ){
+  private function trasformerResult ( $result ){
     return floatval(number_format($result, 2, '.', ''));
   }
 

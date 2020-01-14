@@ -3,15 +3,18 @@
 namespace Modules\Icurrency\Transformers;
 
 use Illuminate\Http\Resources\Json\Resource;
+use Modules\Icurrency\Support\Facades\Currency;
 
 class CurrencyTransformer extends Resource
 {
   public function toArray($request)
   {
+    Currency::setLocaleCurency('MXN');
     $data = [
       'id' => $this->when($this->id, $this->id),
       'name' => $this->when($this->name, $this->name),
       'code' => $this->when($this->code, $this->code),
+      'test' => Currency::convert(1000),
       'symbolLeft' => $this->when($this->symbol_left, $this->symbol_left),
       'symbolRight' => $this->when($this->symbol_right, $this->symbol_right),
       'decimalPlace' => $this->when($this->decimal_place, $this->decimal_place),
