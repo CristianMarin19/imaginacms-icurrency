@@ -1,5 +1,10 @@
 url: https://github.com/imagina/asgardcms-icurrency
 versions:
+
+  "1.0.4":
+    fix:
+      - Fix name method from 'setLocaleCurency' to 'setLocaleCurrency'
+
   "1.0.1":
     added:
       - changelog.yml
