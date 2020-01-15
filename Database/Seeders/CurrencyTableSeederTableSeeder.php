@@ -39,7 +39,7 @@ class CurrencyTableSeederTableSeeder extends Seeder
         ]);
 
         Currency::create([
-          "code"	=> "CAD",
+          "code"	=> "AUD",
           "value"	=> 0.000443,
         ]);
 

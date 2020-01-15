@@ -43,6 +43,8 @@ Number of Requests per Hour: 100
 CURRCONV_APIKEY=apikye
 ```
 
+
+Run the following command the first time after making the migration to synchronize the currencies at the current exchange rate, after this they will be updated automatically with cron job.
 ```ssh
 php artisan currencies:update
 ```
