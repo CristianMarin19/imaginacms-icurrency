@@ -92,7 +92,7 @@ Methods Available
 * Get the current currency:
   ```php
     /* Example */
-    Currency::getLocaleCurency();
+    Currency::getLocaleCurrency();
   ```
 * Set current currency:
   ```php
