@@ -52,6 +52,11 @@ class EloquentCurrencyRepository extends EloquentBaseRepository implements Curre
         $query->orderBy($orderByField, $orderWay);//Add order to query
       }
 
+      //Filter by stock status
+      if (isset($filter->status)) {
+        $query->where('status', $filter->status);
+      }
+
     }
     /*== FIELDS ==*/
     if (isset($params->fields) && count($params->fields))
