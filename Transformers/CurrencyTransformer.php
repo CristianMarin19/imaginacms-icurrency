@@ -9,7 +9,6 @@ class CurrencyTransformer extends Resource
 {
   public function toArray($request)
   {
-    Currency::setLocaleCurency('MXN');
     $data = [
       'id' => $this->when($this->id, $this->id),
       'name' => $this->when($this->name, $this->name),

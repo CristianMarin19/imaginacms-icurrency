@@ -82,6 +82,6 @@ class UpdateCurrencies extends Command
         $obj = json_decode($json, true);
         $val = floatval($obj["$query"]);
         Currency::where('code', $from_currency)->update(['value' => $val]);
-        Log::info("Update Currency {$from_currency}, new value: {$val}");
+        Log::info("Update Currency {$from_currency}, {$query},  new value: {$val}");
     }
 }

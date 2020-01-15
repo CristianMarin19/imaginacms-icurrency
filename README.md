@@ -97,7 +97,7 @@ Methods Available
 * Set current currency:
   ```php
     /* Example */
-    Currency::setLocaleCurency('COP');
+    Currency::setLocaleCurrency('COP');
   ```
   
 * Get array with all current supported:

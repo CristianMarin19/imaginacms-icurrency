@@ -20,13 +20,13 @@ class CurrencyMiddleware
 
         $setting = json_decode($request->setting);
         if (isset($setting->currency)){
-            Currency::setLocaleCurency($setting->currency);
+            Currency::setLocaleCurrency($setting->currency);
             return $next($request);
         }
 
         $filter = json_decode($request->filter);
         if (isset($filter->currency)){
-            Currency::setLocaleCurency($filter->currency);
+            Currency::setLocaleCurrency($filter->currency);
             return $next($request);
         }
 

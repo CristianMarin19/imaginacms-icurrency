@@ -62,7 +62,7 @@ class Currency
   /**
    * @return mixed
    */
-  public function getLocaleCurency()
+  public function getLocaleCurrency()
   {
     return $this->localeCurency;
   }
@@ -70,7 +70,7 @@ class Currency
   /**
    * @param $localeCurency
    */
-  public function setLocaleCurency($newCurrency)
+  public function setLocaleCurrency($newCurrency)
   {
     $this->localeCurency = CurrencyEntity::currencyCode($newCurrency);
   }
