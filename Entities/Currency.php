@@ -47,4 +47,9 @@ class Currency extends Model
       return $query->where('code', strtoupper($currency))->first();
     }
 
+    public function scopeActivedCurrencies($query)
+    {
+        return $query->where('status', 1)->get();
+    }
+
 }
