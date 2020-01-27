@@ -1,5 +1,5 @@
 {
-    "name": "imagina/icurrency",
+    "name": "imagina/icurrency-module",
     "description": "This module manages currencies and conversions",
     "type": "asgard-module",
     "license": "MIT",
