@@ -16,7 +16,7 @@ class CurrencyTransformer extends Resource
       'symbolLeft' => $this->when($this->symbol_left, $this->symbol_left),
       'symbolRight' => $this->when($this->symbol_right, $this->symbol_right),
       'decimalPlace' => $this->when($this->decimal_place, $this->decimal_place),
-      'default_currency' => $this->default_currency ? true : false,
+      'defaultCurrency' => $this->default_currency ? true : false,
       'value' => $this->when($this->value, $this->value),
       'status' => $this->when($this->status, $this->status),
       'options' => $this->when($this->options, $this->options),
