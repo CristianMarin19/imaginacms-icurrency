@@ -32,7 +32,7 @@ class Currency
      * from the default currency
      * to the local currency of the app
      */
-    $result = floatval($value) / floatval($this->localeCurency->value ?? 1);
+    $result = floatval($value) / floatval(isset($this->localeCurency->value) && $this->localeCurency->value ? $this->localeCurency->value : 1);
 
     /* Return value in the follow formant 'xxxx.xx' */
     return  $this->trasformerResult($result);
