@@ -2,10 +2,10 @@
 
 namespace Modules\Icurrency\Transformers;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Modules\Icurrency\Support\Facades\Currency;
 
-class CurrencyTransformer extends Resource
+class CurrencyTransformer extends JsonResource
 {
   public function toArray($request)
   {

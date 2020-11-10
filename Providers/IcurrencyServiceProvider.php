@@ -29,7 +29,7 @@ class IcurrencyServiceProvider extends ServiceProvider
         $this->app['events']->listen(BuildingSidebar::class, RegisterIcurrencySidebar::class);
 
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
-            $event->load('currencies', array_dot(trans('icurrency::currencies')));
+            $event->load('currencies', Arr::dot(trans('icurrency::currencies')));
             // append translations
 
         });
