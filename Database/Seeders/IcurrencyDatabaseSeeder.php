@@ -16,6 +16,7 @@ class IcurrencyDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+         $this->call(IcurrencyModuleTableSeeder::class);
         // $this->call("OthersTableSeeder");
     }
 }

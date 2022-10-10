@@ -40,7 +40,7 @@ class IcurrencyServiceProvider extends ServiceProvider
     {
         $this->publishConfig('icurrency', 'permissions');
 
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        //$this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
     }
 
     /**
